@@ -21,14 +21,14 @@ end condition --- all blocks are filled ie. step 64 is executed..
 '''
 
 
-N = 3
+N = 8
 board = [[-1 for i in range(N)] for j in range(N)]
 
 #print the board
 def printBoard(board):
     for i in board:
         for j in i:
-            print(i[j], end=" ")
+            print(j, end=" ")
         print()
 
 
@@ -40,8 +40,8 @@ def check(board, row, col):
 def solver(board, knights, row, col):
     
     if(knights == N*N):
-        # printBoard(board)
-        print(board)
+        printBoard(board)
+        # print(board)
         return True
     moves = [(2, 1), (2, -1), (-2, 1), (-2, -1), (1, 2), (-1, 2), (1, -2), (-1, -2)] #list of possible moves;
 
@@ -53,6 +53,7 @@ def solver(board, knights, row, col):
                 return True
             board[row+i[0]][col+i[1]] = -1
     # printBoard(board)
+    # print()
     return False
 
 board[0][0] = 0
