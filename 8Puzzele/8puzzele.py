@@ -11,7 +11,7 @@ functions:
     6> makeMove --> makes a move to given coordinates.
     7> printSolSteps -- prints solution
 '''
-from itertools import count
+
 import math
 
 goalState = [
@@ -73,7 +73,7 @@ def validMoves(board : "list[list[int]]") -> "list[list[int]]" :
     if(checker([_row, _col])):
         moves.append([_row, _col])
 
-    #move down
+    #move right
     _row, _col = row + 1,  col
     if(checker([_row, _col])):
         moves.append([_row, _col])
@@ -118,11 +118,13 @@ def solver(board: "list[list[int]]") -> bool:
     # print(board)
     solver(board)
 
+
 def print2DList(lis : list[list[int]]):
     for i in lis:
         for j in i:
             print(j, end=" ")
         print()
+
 
 def printSolSteps(solution : "list[list[list[int]]]") :
 
